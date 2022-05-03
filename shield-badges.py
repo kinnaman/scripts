@@ -13,9 +13,14 @@ and writes them to badges.md
 
 ''')
 while True:
-    makeBadge = input("Would you like to create a new badge? y/n   ")
+    tagsIncluded = input("Would you like output formatted in html y/n    ")
+    if tagsIncluded == "y" or tagsIncluded == "n":
+        break
+    else: print("Not a valid input.")
+while True:
+    makeBadge = input("Would you like to create a new badge? y/n    ")
     if makeBadge != "y" and makeBadge != "n":
-        print("That is not a valid input. Please respond with y or no")
+        print("Not a valid input.")
     if makeBadge == "y":
         badgeText = input("Badge text: ")
         simpleIcon = input("Simple Icon name: ")
@@ -24,8 +29,10 @@ while True:
         simpleIcon = simpleIcon.lower()
         badgeColor = badgeColor.replace('#','')
 
-        newBadge = "https://img.shields.io/badge/" + badgeText + "-" + badgeColor + "?logo=" + simpleIcon + "&logoColor=white&style=for-the-badge"
+        newBadge = "https://img.shields.io/badge/" + badgeText + "-" + badgeColor + "?logo=" + simpleIcon + "&logoColor=white&style=for-the-badge\n"
         print(newBadge)
+        if tagsIncluded == "y":
+            newBadge = "<img alt=" + badgeText + "\" src=\"" + newBadge + "\" />"
         with open('badges.md', 'a') as output:
             output.write(newBadge)
     if makeBadge == "n":

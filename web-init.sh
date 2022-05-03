@@ -3,4 +3,3 @@
 #[-f package.json] && npm init -y
 npm install webpack-demo webpack-cli html-webpack-plugin style-loader css-loader --save-dev
 mkdir src dist
-
