@@ -1,8 +1,12 @@
 #!/bin/bash
 
 # Author:      Morgan Kinnaman
-# Description: Simple script for setting up a debian or Ubuntu web server for static sites and emails
+# Description: Simple script for setting up a debian or Ubuntu web server for static sites
+#              and a simple email server
 # Version:     0.1
+
+# PROJECT TO-DO:
+# - Include 'dialog' or 'whiptail' from Linux (whiptail being deb pre-installed)
 
 echo -e "
 _  _ _ _  _ _  _ ____ _  _ ____ _  _ . ____ 
@@ -57,6 +61,10 @@ elif[$EDITOR_CHOICE=="4"]; then
 fi
 
 # input for basic project & site names
+echo "How many websites are you setting up on this server: "
+read NUM_SITES
+for NUM_SITES
+
 # DISPLAY LINK TO DOCUMENTATION ON HOW TO SET UP DNS RECORDS FOR NEW USERS
 # Show example if they haven't
 # Ask them if they took those steps yet
